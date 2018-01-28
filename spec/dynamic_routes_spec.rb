@@ -12,7 +12,7 @@ describe "Shopping Cart Rack App" do
   end
   describe "/items" do
 
-    it 'Returns item price if it is in @@item' do
+    it 'Returns item price if it is in @@items' do
       Application.class_variable_set(:@@items, [Item.new("Figs",3.42),Item.new("Pears",0.99)])
       get '/items/Figs'
       expect(last_response.body).to include("3.42")
